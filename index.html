@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo Promos - Melhores Ofertas</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --text-color: #ffffff;
+            --accent-color: #0088cc; /* Azul Telegram */
+            --accent-hover: #0077b5;
+            --card-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            /* Fundo simulando um céu estrelado simples */
+            background-image: radial-gradient(circle at 50% 0%, #1a2235 0%, #0b0e14 70%);
+        }
+
+        .container {
+            max-width: 400px;
+            padding: 40px 20px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            margin: 0 0 10px 0;
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin: 0 0 30px 0;
+            font-size: 15px;
+            color: #a0aabf;
+            line-height: 1.5;
+        }
+
+        .btn-telegram {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 80%;
+            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+        }
+
+        .btn-telegram:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 136, 204, 0.6);
+        }
+
+        .icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Substitua o src pelo link da sua imagem -->
+        <img src="https://via.placeholder.com/120/1a2235/ffffff?text=UP" alt="Universo Promos Logo" class="logo">
+        
+        <h1>Universo Promos</h1>
+        <p>As melhores ofertas, cupons e bugs da internet selecionados para você. Junte-se à nossa comunidade no Telegram!</p>
+        
+        <!-- Substitua o href pelo link de convite do seu grupo -->
+        <a href="https://t.me/SEU_LINK_AQUI" class="btn-telegram">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.56 8.16l-1.9 8.95c-.14.63-.52.79-1.04.5l-2.88-2.12-1.39 1.34c-.15.15-.28.28-.58.28l.21-2.94 5.35-4.83c.23-.21-.05-.33-.36-.12l-6.61 4.16-2.85-.89c-.62-.19-.63-.62.13-.92l11.14-4.29c.51-.19.96.11.78.88z"/>
+            </svg>
+            Entrar no Grupo Oficial
+        </a>
+    </div>
+
+</body>
+</html>
