@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Universo Promos — Entre no grupo</title>
-<meta name="description" content="Universo Promos: ofertas e cupons do Mercado Livre direto no seu Telegram.">
+<meta name="description" content="Universo Promos: ofertas e cupons do Mercado Livre e Amazon direto no seu Telegram.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -19,6 +19,8 @@
     --off-white:#f4f0ff;
     --line:rgba(244,240,255,0.14);
     --max-w:1100px;
+    --ml-yellow:#fee600;
+    --amazon-orange:#ff9900;
   }
 
   *{box-sizing:border-box;}
@@ -165,6 +167,43 @@
   .banner-slot .placeholder span{font-size:0.8rem;}
 
   /* ---------- tutorial ---------- */
+  .tab-switch input{
+    position:absolute; opacity:0; pointer-events:none;
+  }
+  .tab-labels{
+    display:inline-flex; gap:6px; padding:6px;
+    background:rgba(244,240,255,0.05); border:1px solid var(--line);
+    border-radius:999px; margin-bottom:36px;
+  }
+  .tab-labels label{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:10px 20px; border-radius:999px; cursor:pointer;
+    font-family:'Unbounded',sans-serif; font-weight:700; font-size:0.82rem;
+    color:rgba(244,240,255,0.55);
+    transition:background .2s ease, color .2s ease;
+  }
+  .tab-labels label .dot{
+    width:9px; height:9px; border-radius:50%; flex:none;
+  }
+  .tab-labels label[for="tab-ml"] .dot{background:var(--ml-yellow);}
+  .tab-labels label[for="tab-amazon"] .dot{background:var(--amazon-orange);}
+  #tab-ml:checked ~ .tab-labels label[for="tab-ml"],
+  #tab-amazon:checked ~ .tab-labels label[for="tab-amazon"]{
+    background:rgba(244,240,255,0.12); color:var(--off-white);
+  }
+  .tab-panels .panel{display:none;}
+  #tab-ml:checked ~ .tab-panels .panel-ml{display:block;}
+  #tab-amazon:checked ~ .tab-panels .panel-amazon{display:block;}
+
+  .platform-tag{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'Unbounded',sans-serif; font-weight:700; font-size:0.78rem;
+    padding:6px 14px; border-radius:999px; margin-bottom:18px;
+  }
+  .platform-tag .dot{width:8px; height:8px; border-radius:50%;}
+  .platform-tag.ml{background:rgba(254,230,0,0.1); border:1px solid rgba(254,230,0,0.3); color:#fee600;}
+  .platform-tag.amazon{background:rgba(255,153,0,0.1); border:1px solid rgba(255,153,0,0.35); color:#ffb84d;}
+
   .tutorial-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
   }
@@ -256,8 +295,8 @@
     <section class="hero">
       <img class="rocket-logo" src="assets/logo.png" alt="Logo Universo Promos">
       <p class="eyebrow">Grupo no Telegram</p>
-      <h1>As melhores ofertas do Mercado Livre, <span>direto no seu bolso</span></h1>
-      <p>Cupons, promoções relâmpago e links de afiliado organizados em um só lugar — sem enrolação, sem spam.</p>
+      <h1>As melhores ofertas de Mercado Livre e Amazon, <span>direto no seu bolso</span></h1>
+      <p>Cupons, promoções relâmpago e links de afiliado das duas maiores lojas do Brasil, organizados em um só lugar — sem enrolação, sem spam.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://t.me/+qzWgET30uS9kYmZh" target="_blank" rel="noopener">Entrar no grupo do Telegram</a>
         <small>Gratuito · Saia quando quiser</small>
@@ -270,58 +309,133 @@
         <h2>Oferta da semana</h2>
       </div>
       <div class="banner-slot">
-          <img src="assets/banner_oferta.jpg" alt="Descrição da oferta">
-        <!--<div class="placeholder">
+        <!--
+          Para colocar seu banner: substitua o conteúdo desta div por
+          <img src="assets/banner.jpg" alt="Descrição da oferta">
+          Tamanho recomendado: 1200x400px
+        -->
+        <div class="placeholder">
           <strong>Espaço reservado para o banner</strong>
           <span>Coloque assets/banner.jpg aqui — recomendado 1200×400px</span>
-        </div> -->
+        </div>
       </div>
     </section>
 
     <section id="tutorial">
       <div class="section-head">
         <p class="eyebrow">Tutorial rápido</p>
-        <h2>Como transformar um link do Mercado Livre em link de afiliado</h2>
-        <p>Direto no grupo, sem precisar instalar nada. Veja o passo a passo:</p>
+        <h2>Como transformar um link em link de afiliado</h2>
+        <p>Direto no grupo, sem precisar instalar nada. Escolha a loja e veja o passo a passo:</p>
       </div>
-      <div class="tutorial-grid">
-        <ol class="steps">
-          <li>
-            <span class="step-num">1</span>
-            <div class="step-text">
-              <strong>Copie o link do produto</strong>
-              <span>Abra o produto no app ou site do Mercado Livre e copie o link.</span>
+
+      <div class="tab-switch">
+        <input type="radio" name="tabs" id="tab-ml" checked>
+        <input type="radio" name="tabs" id="tab-amazon">
+
+        <div class="tab-labels">
+          <label for="tab-ml"><span class="dot"></span>Mercado Livre</label>
+          <label for="tab-amazon"><span class="dot"></span>Amazon</label>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel panel-ml">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag ml"><span class="dot"></span>Mercado Livre</span>
+                <ol class="steps">
+                  <li>
+                    <span class="step-num">1</span>
+                    <div class="step-text">
+                      <strong>Copie o link do produto</strong>
+                      <span>Abra o produto no app ou site do Mercado Livre e copie o link.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">2</span>
+                    <div class="step-text">
+                      <strong>Cole no bot do grupo</strong>
+                      <span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">3</span>
+                    <div class="step-text">
+                      <strong>Receba o link de afiliado</strong>
+                      <span>Em segundos, você recebe o link pronto para compartilhar.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">4</span>
+                    <div class="step-text">
+                      <strong>Compartilhe e acompanhe</strong>
+                      <span>Use o link onde quiser — grupos, status, redes sociais.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <img src="assets/tutorial.gif" alt="Tutorial Mercado Livre">
+                    <!--<div class="gif-placeholder">
+                      <strong>GIF do tutorial aqui</strong>
+                      <span>Coloque assets/tutorial-mercadolivre.gif</span> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </li>
-          <li>
-            <span class="step-num">2</span>
-            <div class="step-text">
-              <strong>Cole no bot do grupo</strong>
-              <span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span>
-            </div>
-          </li>
-          <li>
-            <span class="step-num">3</span>
-            <div class="step-text">
-              <strong>Receba o link de afiliado</strong>
-              <span>Em segundos, você recebe o link pronto para compartilhar.</span>
-            </div>
-          </li>
-          <li>
-            <span class="step-num">4</span>
-            <div class="step-text">
-              <strong>Compartilhe e acompanhe</strong>
-              <span>Use o link onde quiser — grupos, status, redes sociais.</span>
-            </div>
-          </li>
-        </ol>
-        <div class="phone-stage">
-          <div class="phone">
-            <div class="phone-screen">
-                <img src="assets/tutorial.gif" alt="Tutorial de conversão de link">
-              <!--<div class="gif-placeholder">
-                <strong>GIF do tutorial aqui</strong>
-                <span>Coloque assets/tutorial.gif</span> -->
+          </div>
+
+          <div class="panel panel-amazon">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag amazon"><span class="dot"></span>Amazon</span>
+                <ol class="steps">
+                  <li>
+                    <span class="step-num">1</span>
+                    <div class="step-text">
+                      <strong>Copie o link do produto</strong>
+                      <span>Abra o produto no app ou site da Amazon e copie o link.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">2</span>
+                    <div class="step-text">
+                      <strong>Cole no bot do grupo</strong>
+                      <span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">3</span>
+                    <div class="step-text">
+                      <strong>Receba o link de afiliado</strong>
+                      <span>Em segundos, você recebe o link pronto para compartilhar.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">4</span>
+                    <div class="step-text">
+                      <strong>Compartilhe e acompanhe</strong>
+                      <span>Use o link onde quiser — grupos, status, redes sociais.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <img src="assets/tutorial.gif" alt="Tutorial Mercado Livre">
+                    <!--
+                      Para colocar o GIF do tutorial da Amazon: substitua o conteúdo
+                      desta div por <img src="assets/tutorial-amazon.gif" alt="Tutorial Amazon">
+                      Tamanho recomendado: proporção 9:18 (tela de celular)
+                    <div class="gif-placeholder">
+                      <strong>GIF do tutorial aqui</strong>
+                      <span>Coloque assets/tutorial-amazon.gif</span>-->
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -336,7 +450,7 @@
     </section>
 
     <footer>
-      Universo Promos © 2026 · Este grupo não possui vínculo oficial com o Mercado Livre.
+      Universo Promos © 2026 · Este grupo não possui vínculo oficial com Mercado Livre ou Amazon.
     </footer>
   </div>
 </main>
