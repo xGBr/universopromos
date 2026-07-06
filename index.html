@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Universo Promos — Entre no grupo</title>
-<meta name="description" content="Universo Promos: ofertas e cupons do Mercado Livre e Amazon direto no seu Telegram.">
+<meta name="description" content="Universo Promos: ofertas e cupons do Mercado Livre, Amazon e Shopee direto no seu Telegram.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -21,6 +21,7 @@
     --max-w:1100px;
     --ml-yellow:#fee600;
     --amazon-orange:#ff9900;
+    --shopee-orange:#ee4d2d;
   }
 
   *{box-sizing:border-box;}
@@ -187,13 +188,16 @@
   }
   .tab-labels label[for="tab-ml"] .dot{background:var(--ml-yellow);}
   .tab-labels label[for="tab-amazon"] .dot{background:var(--amazon-orange);}
+  .tab-labels label[for="tab-shopee"] .dot{background:var(--shopee-orange);}
   #tab-ml:checked ~ .tab-labels label[for="tab-ml"],
-  #tab-amazon:checked ~ .tab-labels label[for="tab-amazon"]{
+  #tab-amazon:checked ~ .tab-labels label[for="tab-amazon"],
+  #tab-shopee:checked ~ .tab-labels label[for="tab-shopee"]{
     background:rgba(244,240,255,0.12); color:var(--off-white);
   }
   .tab-panels .panel{display:none;}
   #tab-ml:checked ~ .tab-panels .panel-ml{display:block;}
   #tab-amazon:checked ~ .tab-panels .panel-amazon{display:block;}
+  #tab-shopee:checked ~ .tab-panels .panel-shopee{display:block;}
 
   .platform-tag{
     display:inline-flex; align-items:center; gap:8px;
@@ -203,6 +207,31 @@
   .platform-tag .dot{width:8px; height:8px; border-radius:50%;}
   .platform-tag.ml{background:rgba(254,230,0,0.1); border:1px solid rgba(254,230,0,0.3); color:#fee600;}
   .platform-tag.amazon{background:rgba(255,153,0,0.1); border:1px solid rgba(255,153,0,0.35); color:#ffb84d;}
+  .platform-tag.shopee{background:rgba(238,77,45,0.12); border:1px solid rgba(238,77,45,0.35); color:#ff8266;}
+
+  /* ---------- qr code ---------- */
+  .qr-block{
+    display:flex; flex-direction:column; align-items:center; gap:22px; text-align:center;
+  }
+  .qr-card{
+    width:230px;
+    background:#ffffff;
+    border-radius:24px;
+    padding:20px;
+    box-shadow:0 30px 70px -20px rgba(109,40,217,0.5);
+    border:1px solid rgba(255,255,255,0.6);
+  }
+  .qr-card img{
+    width:100%; height:auto; display:block; border-radius:6px;
+  }
+  .qr-card .qr-placeholder{
+    aspect-ratio:1/1; border-radius:6px;
+    border:1.5px dashed rgba(109,40,217,0.4);
+    display:flex; align-items:center; justify-content:center;
+    color:#5b21b6; font-size:0.78rem; padding:16px; text-align:center;
+    font-family:'Manrope',sans-serif;
+  }
+  .qr-block small{color:rgba(244,240,255,0.5); font-size:0.82rem; max-width:320px;}
 
   .tutorial-grid{
     display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center;
@@ -267,6 +296,8 @@
     .tutorial-grid{grid-template-columns:1fr; gap:40px;}
     .phone-stage{order:-1;}
     .nav .btn-ghost{display:none;}
+    .tab-labels{flex-wrap:wrap; justify-content:center;}
+    .tab-labels label{padding:9px 14px; font-size:0.76rem;}
   }
 
   @media (prefers-reduced-motion: reduce){
@@ -295,10 +326,10 @@
     <section class="hero">
       <img class="rocket-logo" src="assets/logo.png" alt="Logo Universo Promos">
       <p class="eyebrow">Grupo no Telegram</p>
-      <h1>As melhores ofertas de Mercado Livre e Amazon, <span>direto no seu bolso</span></h1>
-      <p>Cupons, promoções relâmpago e links de afiliado das duas maiores lojas do Brasil, organizados em um só lugar — sem enrolação, sem spam.</p>
+      <h1>As melhores ofertas de Mercado Livre, Amazon e Shopee, <span>direto no seu bolso</span></h1>
+      <p>Cupons, promoções relâmpago e links de afiliado das maiores lojas do Brasil, organizados em um só lugar — sem enrolação, sem spam.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://t.me/universopromos" target="_blank" rel="noopener">Entrar no grupo do Telegram</a>
+        <a class="btn btn-primary" href="https://t.me/+qzWgET30uS9kYmZh" target="_blank" rel="noopener">Entrar no grupo do Telegram</a>
         <small>Gratuito · Saia quando quiser</small>
       </div>
     </section>
@@ -309,7 +340,7 @@
         <h2>Oferta da semana</h2>
       </div>
       <div class="banner-slot">
-          <img src="assets/banner_oferta.jpg" alt="Descrição da oferta">
+          <img src="assets/banner.jpg" alt="Descrição da oferta">
       </div>
     </section>
 
@@ -323,10 +354,12 @@
       <div class="tab-switch">
         <input type="radio" name="tabs" id="tab-ml" checked>
         <input type="radio" name="tabs" id="tab-amazon">
+        <input type="radio" name="tabs" id="tab-shopee">
 
         <div class="tab-labels">
           <label for="tab-ml"><span class="dot"></span>Mercado Livre</label>
           <label for="tab-amazon"><span class="dot"></span>Amazon</label>
+          <label for="tab-shopee"><span class="dot"></span>Shopee</label>
         </div>
 
         <div class="tab-panels">
@@ -368,7 +401,15 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                      <img src="assets/tutorial.gif" alt="Tutorial Mercado Livre">
+                    <!--
+                      Para colocar o GIF do tutorial do Mercado Livre: substitua o conteúdo
+                      desta div por <img src="assets/tutorial-mercadolivre.gif" alt="Tutorial Mercado Livre">
+                      Tamanho recomendado: proporção 9:18 (tela de celular)
+                    -->
+                    <div class="gif-placeholder">
+                      <strong>GIF do tutorial aqui</strong>
+                      <span>Coloque assets/tutorial-mercadolivre.gif</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -413,7 +454,68 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                      <img src="assets/tutorial.gif" alt="Tutorial Amazon">
+                    <!--
+                      Para colocar o GIF do tutorial da Amazon: substitua o conteúdo
+                      desta div por <img src="assets/tutorial-amazon.gif" alt="Tutorial Amazon">
+                      Tamanho recomendado: proporção 9:18 (tela de celular)
+                    -->
+                    <div class="gif-placeholder">
+                      <strong>GIF do tutorial aqui</strong>
+                      <span>Coloque assets/tutorial-amazon.gif</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-shopee">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag shopee"><span class="dot"></span>Shopee</span>
+                <ol class="steps">
+                  <li>
+                    <span class="step-num">1</span>
+                    <div class="step-text">
+                      <strong>Copie o link do produto</strong>
+                      <span>Abra o produto no app ou site da Shopee e copie o link.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">2</span>
+                    <div class="step-text">
+                      <strong>Cole no bot do grupo</strong>
+                      <span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">3</span>
+                    <div class="step-text">
+                      <strong>Receba o link de afiliado</strong>
+                      <span>Em segundos, você recebe o link pronto para compartilhar.</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="step-num">4</span>
+                    <div class="step-text">
+                      <strong>Compartilhe e acompanhe</strong>
+                      <span>Use o link onde quiser — grupos, status, redes sociais.</span>
+                    </div>
+                  </li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <!--
+                      Para colocar o GIF do tutorial da Shopee: substitua o conteúdo
+                      desta div por <img src="assets/tutorial-shopee.gif" alt="Tutorial Shopee">
+                      Tamanho recomendado: proporção 9:18 (tela de celular)
+                    -->
+                    <div class="gif-placeholder">
+                      <strong>GIF do tutorial aqui</strong>
+                      <span>Coloque assets/tutorial-shopee.gif</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -423,14 +525,34 @@
       </div>
     </section>
 
+    <section id="qrcode">
+      <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <p class="eyebrow">Ou escaneie</p>
+        <h2>Aponte a câmera do celular e entre no grupo</h2>
+      </div>
+      <div class="qr-block">
+        <div class="qr-card">
+          <!--
+            Para colocar seu QR code: substitua o conteúdo desta div por
+            <img src="assets/qrcode.png" alt="QR code para entrar no grupo Universo Promos">
+            Pode subir na resolução original — a imagem se ajusta automaticamente ao tamanho do cartão.
+          -->
+          <div class="qr-placeholder">
+            <span>Coloque assets/qrcode.png aqui<br>(qualquer resolução — ajusta sozinho)</span>
+          </div>
+        </div>
+        <small>Abra a câmera do celular, aponte para o QR code e toque no link que aparecer.</small>
+      </div>
+    </section>
+
     <section class="final-cta">
       <h2>Pronto para economizar no próximo pedido?</h2>
       <p>Entre no Universo Promos e receba as melhores ofertas assim que elas aparecem.</p>
-      <a class="btn btn-primary" href="https://t.me/universopromos" target="_blank" rel="noopener">Entrar no grupo agora</a>
+      <a class="btn btn-primary" href="https://t.me/+qzWgET30uS9kYmZh" target="_blank" rel="noopener">Entrar no grupo agora</a>
     </section>
 
     <footer>
-      Universo Promos © 2026 · Este grupo não possui vínculo oficial com Mercado Livre ou Amazon.
+      Universo Promos © 2026 · Este grupo não possui vínculo oficial com Mercado Livre, Amazon ou Shopee.
     </footer>
   </div>
 </main>
