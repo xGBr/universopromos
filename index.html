@@ -80,11 +80,26 @@
     <section id="banner">
       <div class="section-head">
         <p class="eyebrow">Destaque</p>
-        <h2>Oferta da semana</h2>
+        <h2>Ofertas da semana</h2>
       </div>
-      <div class="banner-slot" style="border: none; background: transparent;">
-        <!-- Elemento alvo para o script da Instant Gaming -->
-        <div class="ig-banner-destaque" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"></div>
+      
+      <!-- Slot principal mantendo suas configurações de tamanho -->
+      <div class="banner-slot" style="border: none; background: transparent; position: relative;">
+        
+        <div class="banner-carousel">
+          <!-- Slide 1: Instant Gaming -->
+          <div class="carousel-slide slide-1">
+            <div class="ig-banner-destaque" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"></div>
+          </div>
+          
+          <!-- Slide 2: Aliexpress (725x90) -->
+          <div class="carousel-slide slide-2">
+            <a href='https://s.click.aliexpress.com/e/_C3FyWl2x?bz=725*90' target='_blank'>
+              <img width='725' height='90' src='https://ae-pic-a1.aliexpress-media.com/kf/Scfbe2c5b96c048b5ad2c177fb6ef8add4.png' alt='Oferta Aliexpress' style='max-width: 100%; height: auto; border-radius: 8px;' />
+            </a>
+          </div>
+        </div>
+
       </div>
     </section>
 

@@ -341,3 +341,40 @@ footer{border-top:1px solid var(--line); padding:50px 0 40px;}
 @media (prefers-reduced-motion: reduce){
   .stars, .hero .rocket-logo{animation:none;}
 }
+
+/* ---------- Banner Carousel ---------- */
+.banner-carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  animation: fade-carousel 10s infinite;
+}
+
+/* O primeiro slide começa visível */
+.carousel-slide.slide-1 {
+  animation-delay: 0s;
+}
+
+/* O segundo slide atrasa 5 segundos para intercalar certinho */
+.carousel-slide.slide-2 {
+  animation-delay: 5s;
+}
+
+@keyframes fade-carousel {
+  0%, 45% { opacity: 1; z-index: 2; }
+  50%, 95% { opacity: 0; z-index: 1; }
+  100% { opacity: 1; z-index: 2; }
+}
