@@ -88,10 +88,9 @@
           <img src="assets/banner.jpg" alt="Descrição da oferta">
           Tamanho recomendado: 1200x400px
         -->
-        <div class="placeholder">
-          <strong>Espaço reservado para o banner</strong>
-          <span>Coloque assets/banner.jpg aqui — recomendado 1200×400px</span>
-        </div>
+      <div class="banner-slot" style="border: none; background: transparent;">
+        <!-- Elemento alvo para o script da Instant Gaming -->
+        <div class="ig-banner-destaque" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"></div>
       </div>
     </section>
 
@@ -319,6 +318,17 @@
     </footer>
   </div>
 </main>
+
+<!-- Integração do Banner Instant Gaming -->
+    <script>
+      // Configuração obrigatória (deve vir antes do carregamento do script)
+      window.igBannerConfig = {
+          lang: 'br',
+          igr: 'unipromos',
+          banners: ['ig-banner-destaque'] // Referência à mesma classe adicionada no passo 1
+      };
+    </script>
+    <script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>
 
 </body>
 </html>
