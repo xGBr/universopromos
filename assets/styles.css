@@ -463,3 +463,25 @@ footer{border-top:1px solid var(--line); padding:50px 0 40px;}
   0%, 100% { opacity: 1; }
   50% { opacity: 0.5; }
 }
+
+/* Estilo para o botão/link de ação após gerar o link */
+.btn-copiar, .resultado-btn {
+    background-color: #ffc107; /* Tom amarelado padrão dos botões de ação */
+    color: #1a1a1a !important; /* Texto escuro bem legível */
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-copiar:hover, .resultado-btn:hover {
+    background-color: #ffb300;
+    transform: scale(1.02);
+    color: #000 !important;
+}
