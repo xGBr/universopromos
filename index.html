@@ -82,12 +82,6 @@
         <p class="eyebrow">Destaque</p>
         <h2>Oferta da semana</h2>
       </div>
-      <div class="banner-slot">
-        <!--
-          Para colocar seu banner: substitua o conteúdo desta div por
-          <img src="assets/banner.jpg" alt="Descrição da oferta">
-          Tamanho recomendado: 1200x400px
-        -->
       <div class="banner-slot" style="border: none; background: transparent;">
         <!-- Elemento alvo para o script da Instant Gaming -->
         <div class="ig-banner-destaque" style="width: 100%; height: 100%; display: flex; justify-content: center; align-items: center;"></div>
@@ -131,7 +125,6 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                    <!-- <img src="assets/tutorial-mercadolivre.gif" alt="Tutorial Mercado Livre"> -->
                     <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-mercadolivre.gif</span></div>
                   </div>
                 </div>
@@ -153,7 +146,6 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                    <!-- <img src="assets/tutorial-amazon.gif" alt="Tutorial Amazon"> -->
                     <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-amazon.gif</span></div>
                   </div>
                 </div>
@@ -175,7 +167,6 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                    <!-- <img src="assets/tutorial-shopee.gif" alt="Tutorial Shopee"> -->
                     <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-shopee.gif</span></div>
                   </div>
                 </div>
@@ -197,7 +188,6 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                    <!-- <img src="assets/tutorial-aliexpress.gif" alt="Tutorial Aliexpress"> -->
                     <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-aliexpress.gif</span></div>
                   </div>
                 </div>
@@ -219,7 +209,6 @@
               <div class="phone-stage">
                 <div class="phone">
                   <div class="phone-screen">
-                    <!-- <img src="assets/tutorial-instant-gaming.gif" alt="Tutorial Instant Gaming"> -->
                     <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-instant-gaming.gif</span></div>
                   </div>
                 </div>
@@ -252,7 +241,7 @@
         <a class="article-card" href="blog/guia-instant-gaming.html">
           <span class="platform-tag instant"><span class="dot"></span>Instant Gaming</span>
           <h3>Instant Gaming: como funciona a compra de jogos com chave (key)?</h3>
-          <p>O que é uma key, como ativar e os cuidados na hora de comprar jogos mais baratos.</p>
+          <p>O que é uma key, কাশী, como ativar e os cuidados na hora de comprar jogos mais baratos.</p>
           <span class="read-more">Ler artigo →</span>
         </a>
       </div>
@@ -268,11 +257,6 @@
       </div>
       <div class="qr-block">
         <div class="qr-card">
-          <!--
-            Para colocar seu QR code: substitua o conteúdo desta div por
-            <img src="assets/qrcode.png" alt="QR code para entrar no grupo Universo Promos">
-            Pode subir na resolução original — a imagem se ajusta automaticamente ao tamanho do cartão.
-          -->
           <div class="qr-placeholder">
             <span>Coloque assets/qrcode.png aqui<br>(qualquer resolução — ajusta sozinho)</span>
           </div>
@@ -320,15 +304,15 @@
 </main>
 
 <!-- Integração do Banner Instant Gaming -->
-    <script>
-      // Configuração obrigatória (deve vir antes do carregamento do script)
-      window.igBannerConfig = {
-          lang: 'br',
-          igr: 'unipromos',
-          banners: ['ig-banner-destaque'] // Referência à mesma classe adicionada no passo 1
-      };
-    </script>
-    <script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>
+<script>
+  // Configuração obrigatória (deve vir antes do carregamento do script)
+  window.igBannerConfig = {
+      lang: 'br',
+      igr: 'unipromos',
+      banners: ['ig-banner-destaque']
+  };
+</script>
+<script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>
 
 </body>
 </html>
