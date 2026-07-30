@@ -9,7 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
-<meta name="lomadee" content="2324685" />
 </head>
 <body>
 
@@ -62,17 +61,24 @@
         </form>
         
         <!-- Estado de Carregamento -->
-        <div id="loading-state" class="hidden">
+        <div id="loading-state" class="hidden" role="status" aria-live="polite">
           <p>⏳ Processando seu link mágico...</p>
         </div>
 
+        <!-- Estado de Erro -->
+        <div id="error-state" class="hidden" role="alert" aria-live="assertive">
+          <p></p>
+        </div>
+
         <!-- Resultado -->
-        <div id="result-container" class="result-container hidden">
+        <div id="result-container" class="result-container hidden" aria-live="polite">
           <p><strong>Sucesso!</strong> Seu link de afiliado gerado:</p>
           <div class="result-box">
-            <input type="text" id="generated-link" readonly>
-            <!-- Botão corrigido: agora é um link interativo (<a>) com classes ajustadas para não sumir o texto -->
-            <a id="copy-btn" class="btn btn-primary" target="_blank" rel="noopener noreferrer"> Copiar</a>
+            <a id="generated-link" class="generated-link" href="#" target="_blank" rel="noopener noreferrer nofollow">—</a>
+            <div class="result-actions">
+              <a id="open-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer nofollow">Abrir link ↗</a>
+              <button type="button" id="copy-btn" class="btn-icon" title="Copiar link" aria-label="Copiar link">📋</button>
+            </div>
           </div>
         </div>
       </div>
@@ -348,78 +354,11 @@
 </main>
 
 <!-- Integração do Banner Instant Gaming -->
-<script>
-  // Configuração obrigatória (deve vir antes do carregamento do script)
-  window.igBannerConfig = {
-      lang: 'br',
-      igr: 'unipromos',
-      banners: ['ig-banner-destaque']
-  };
-</script>
+<script src="assets/ig-config.js"></script>
 <script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>
 
-<script>
-  document.getElementById('link-form').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    // Captura os elementos da tela
-    const originalLink = document.getElementById('original-link').value;
-    const generateBtn = document.getElementById('generate-btn');
-    const resultContainer = document.getElementById('result-container');
-    const loadingState = document.getElementById('loading-state');
-    const generatedLinkInput = document.getElementById('generated-link');
-
-    // Altera o visual para o estado de carregamento
-    generateBtn.disabled = true;
-    generateBtn.style.opacity = '0.5';
-    resultContainer.classList.add('hidden');
-    loadingState.classList.remove('hidden');
-
-    try {
-      // ATENÇÃO: Substitua a URL abaixo pela URL de Produção do seu nó Webhook no n8n
-      const webhookUrl = 'https://n8n.universopromos.com.br/webhook/5706369e-9f76-40c5-a7ea-4182967a5676'; 
-      
-      const response = await fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ link_usuario: originalLink })
-      });
-
-      if (!response.ok) throw new Error('Falha ao comunicar com o servidor.');
-
-      // Recebe a resposta do n8n (exigirá que você configure o nó "Respond to Webhook" no n8n)
-      const data = await response.json();
-      
-      // Supondo que você configure o n8n para retornar um JSON no formato: { "link_final": "https://..." }
-      generatedLinkInput.value = data.link_final || "Erro: Link não retornado pela API.";
-      
-      // Mostra o resultado
-      loadingState.classList.add('hidden');
-      resultContainer.classList.remove('hidden');
-      
-    } catch (error) {
-      console.error('Erro na requisição:', error);
-      alert('Houve um erro de comunicação. Tente novamente em alguns segundos.');
-      loadingState.classList.add('hidden');
-    } finally {
-      // Restaura o botão
-      generateBtn.disabled = false;
-      generateBtn.style.opacity = '1';
-    }
-  });
-
-  // Função para o botão de Copiar
-  document.getElementById('copy-btn').addEventListener('click', () => {
-    const linkInput = document.getElementById('generated-link');
-    linkInput.select();
-    navigator.clipboard.writeText(linkInput.value);
-    
-    const btn = document.getElementById('copy-btn');
-    const originalText = btn.innerText;
-    btn.innerText = 'Copiado!';
-    setTimeout(() => { btn.innerText = originalText; }, 2000);
-  });
-</script>
+<!-- Gerador de links de afiliado -->
+<script src="assets/main.js" defer></script>
 
 </body>
 </html>
