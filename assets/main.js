@@ -159,40 +159,8 @@
     openBtn.href = finalLink;
   }
 
-  async function handleCopyClick() {
-    const generatedLink = $('generated-link');
-    const linkText = generatedLink.textContent.trim();
-    if (!linkText || linkText === '—') return;
-
-    const copyBtn = $('copy-btn');
-    try {
-      await navigator.clipboard.writeText(linkText);
-    } catch (e) {
-      // Fallback para navegadores sem suporte à Clipboard API
-      const tempInput = document.createElement('textarea');
-      tempInput.value = linkText;
-      tempInput.style.position = 'fixed';
-      tempInput.style.opacity = '0';
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      document.execCommand('copy');
-      document.body.removeChild(tempInput);
-    }
-
-    const originalLabel = copyBtn.textContent;
-    copyBtn.textContent = '✓';
-    copyBtn.disabled = true;
-    setTimeout(() => {
-      copyBtn.textContent = originalLabel;
-      copyBtn.disabled = false;
-    }, 1800);
-  }
-
   document.addEventListener('DOMContentLoaded', () => {
     const form = $('link-form');
     if (form) form.addEventListener('submit', handleSubmit);
-
-    const copyBtn = $('copy-btn');
-    if (copyBtn) copyBtn.addEventListener('click', handleCopyClick);
   });
 })();
