@@ -419,7 +419,10 @@ footer{border-top:1px solid var(--line); padding:50px 0 40px;}
 @media (max-width:600px){
   .generator-form{flex-direction:column;}
   .result-box{flex-direction:column; align-items:stretch;}
-  .generated-link{text-align:center; white-space:normal; word-break:break-all; text-overflow:clip;}
+  .generated-link{
+    text-align:center; white-space:normal; word-break:break-all; text-overflow:clip;
+    border-radius:16px; line-height:1.5;
+  }
   .result-box .btn{width:100%; justify-content:center;}
 }
 
