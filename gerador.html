@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Links de Afiliado — Universo Promos</title>
+<meta name="description" content="Cole o link do produto e receba na hora o link de afiliado do Universo Promos, pronto para compartilhar.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="glow-a"></div>
+<div class="glow-b"></div>
+
+<main>
+  <div class="wrap" style="max-width:640px;">
+
+    <header style="padding:56px 0 0; text-align:center;">
+      <a class="brand" href="index.html" style="justify-content:center;">
+        <img src="assets/logo.png" alt="Universo Promos">
+        Universo Promos
+      </a>
+    </header>
+
+    <section style="padding:36px 0 0; text-align:center;">
+      <p class="eyebrow">Ferramenta exclusiva</p>
+      <h1 style="font-size:clamp(1.9rem,5vw,2.6rem); margin-top:10px;">Gerador Automático de Links</h1>
+      <p style="color:rgba(244,240,255,0.75); max-width:480px; margin:16px auto 0;">
+        Cole o link do produto abaixo e receba seu link de afiliado na hora, pronto para compartilhar.
+      </p>
+    </section>
+
+    <section style="padding-top:32px;">
+      <div class="generator-card">
+        <form id="link-form" class="generator-form">
+          <input type="url" id="original-link" placeholder="Cole o link do Mercado Livre, Amazon, Shopee ou AliExpress aqui..." required>
+          <button type="submit" class="btn btn-primary" id="generate-btn">Gerar Link</button>
+        </form>
+
+        <!-- Estado de Carregamento -->
+        <div id="loading-state" class="hidden" role="status" aria-live="polite">
+          <p>⏳ Processando seu link mágico...</p>
+        </div>
+
+        <!-- Estado de Erro -->
+        <div id="error-state" class="hidden" role="alert" aria-live="assertive">
+          <p></p>
+        </div>
+
+        <!-- Resultado -->
+        <div id="result-container" class="result-container hidden" aria-live="polite">
+          <p><strong>Sucesso!</strong> Seu link de afiliado gerado:</p>
+          <div class="result-box">
+            <a id="generated-link" class="generated-link" href="#" target="_blank" rel="noopener noreferrer nofollow">—</a>
+            <a id="open-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer nofollow">Abrir link ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer style="text-align:center; padding:36px 0 56px; border-top:none;">
+      <p style="color:rgba(244,240,255,0.4); font-size:0.82rem;">
+        Universo Promos © 2026 · <a href="index.html" style="color:var(--magenta); text-decoration:none; font-weight:700;">Voltar para o site</a>
+      </p>
+    </footer>
+
+  </div>
+</main>
+
+<script src="assets/main.js" defer></script>
+
+</body>
+</html>
