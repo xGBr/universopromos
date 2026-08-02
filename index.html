@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Universo Promos — Cupons e ofertas de Mercado Livre, Amazon, Shopee, Aliexpress e Instant Gaming</title>
+<meta name="description" content="Universo Promos reúne cupons, ofertas e guias de compra de Mercado Livre, Amazon, Shopee, Aliexpress e Instant Gaming, com um grupo gratuito no Telegram.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="stars"></div>
+<div class="glow-a"></div>
+<div class="glow-b"></div>
+
+<main>
+  <div class="wrap">
+    <header>
+      <nav class="nav">
+        <a class="brand" href="index.html">
+          <img src="assets/logo.png" alt="Universo Promos">
+          Universo Promos
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="active">Início</a>
+          <a href="gerador.html">Gerador de Links</a>
+          <a href="blog/index.html">Blog</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="contato.html">Contato</a>
+        </div>
+        <div class="nav-right">
+          <a class="btn btn-ghost" href="#tutorial">Como funciona</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <img class="rocket-logo" src="assets/logo.png" alt="Logo Universo Promos">
+      <p class="eyebrow">Grupo no Telegram · Blog de ofertas</p>
+      <h1>As melhores ofertas da internet, <span>direto no seu bolso</span></h1>
+      <p>Cupons e promoções relâmpago das maiores lojas online. Acompanhe tudo pelo nosso Telegram gratuito e economize nas suas compras</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://t.me/+qzWgET30uS9kYmZh" target="_blank" rel="noopener">Entrar no grupo do Telegram</a>
+        <small>Gratuito · Saia quando quiser</small>
+      </div>
+    </section>
+
+<section id="gerador">
+      <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <p class="eyebrow">Ferramenta Exclusiva</p>
+        <h2>Gerador Automático de Links</h2>
+        <p>Cole o link do produto abaixo e receba seu link de afiliado na hora, pronto para compartilhar.</p>
+      </div>
+      
+      <div class="generator-card">
+        <form id="link-form" class="generator-form">
+          <input type="url" id="original-link" placeholder="Cole o link do Mercado Livre, Amazon, Shopee ou AliExpress aqui..." required>
+          <button type="submit" class="btn btn-primary" id="generate-btn">Gerar Link</button>
+        </form>
+        
+        <!-- Estado de Carregamento -->
+        <div id="loading-state" class="hidden" role="status" aria-live="polite">
+          <p>⏳ Processando seu link mágico...</p>
+        </div>
+
+        <!-- Estado de Erro -->
+        <div id="error-state" class="hidden" role="alert" aria-live="assertive">
+          <p></p>
+        </div>
+
+        <!-- Resultado -->
+        <div id="result-container" class="result-container hidden" aria-live="polite">
+          <p><strong>Sucesso!</strong> Seu link de afiliado gerado:</p>
+          <div class="result-box">
+            <a id="generated-link" class="generated-link" href="#" target="_blank" rel="noopener noreferrer nofollow">—</a>
+            <a id="open-btn" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer nofollow">Abrir link ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre-resumo">
+      <div class="section-head">
+        <p class="eyebrow">Quem somos</p>
+        <h2>Um espaço para economizar comprando online</h2>
+        <p>
+          O Universo Promos nasceu para organizar, em um só lugar, as promoções que valem a pena nas
+          principais lojas online do Brasil. Além do grupo no Telegram, mantemos este site com artigos e
+          guias práticos sobre cupons, frete, prazos de entrega e como aproveitar cada loja parceira da
+          melhor forma. Nosso objetivo é ajudar quem compra online a economizar tempo e dinheiro —
+          e ser transparente sobre como o projeto funciona (veja nossa
+          <a href="afiliados.html" style="color:var(--magenta); font-weight:700; text-decoration:none;">divulgação de afiliados</a>).
+        </p>
+      </div>
+    </section>
+
+    <section id="lojas">
+      <div class="section-head">
+        <p class="eyebrow">Lojas parceiras</p>
+        <h2>Onde encontramos as ofertas</h2>
+        <p>Acompanhamos cupons e promoções nas seguintes lojas:</p>
+      </div>
+      <div class="store-grid">
+        <div class="store-card ml"><span class="dot"></span><strong>Mercado Livre</strong></div>
+        <div class="store-card amazon"><span class="dot"></span><strong>Amazon</strong></div>
+        <div class="store-card shopee"><span class="dot"></span><strong>Shopee</strong></div>
+        <div class="store-card aliexpress"><span class="dot"></span><strong>Aliexpress</strong></div>
+        <div class="store-card instant"><span class="dot"></span><strong>Instant Gaming</strong></div>
+      </div>
+    </section>
+
+    <section id="banner">
+      <div class="section-head" style="margin-bottom:24px;">
+        <p class="eyebrow">Destaque</p>
+        <h2>Ofertas da semana</h2>
+      </div>
+
+      <!--
+        Tempo de exibição de cada banner: altere o valor de data-interval
+        (em milissegundos) abaixo. 6000 = 6 segundos.
+      -->
+      <div class="carousel-card" data-interval="6000">
+        <div class="banner-carousel">
+          <div class="carousel-track">
+            <!-- Slide 1: Instant Gaming -->
+            <div class="carousel-slide">
+              <div class="ig-banner-destaque" style="width:100%; display:flex; justify-content:center; align-items:center;"></div>
+            </div>
+
+            <!-- Slide 2: Aliexpress (725x90) -->
+            <div class="carousel-slide">
+              <a href="https://s.click.aliexpress.com/e/_C3FyWl2x?bz=725*90" target="_blank" rel="noopener noreferrer nofollow">
+                <img width="725" height="90" src="https://ae-pic-a1.aliexpress-media.com/kf/Scfbe2c5b96c048b5ad2c177fb6ef8add4.png" alt="Oferta Aliexpress" class="carousel-img">
+              </a>
+            </div>
+
+            <!--
+              Para adicionar um novo banner ao carrossel, copie o padrão de um
+              <div class="carousel-slide">...</div> acima e cole aqui dentro,
+              com o conteúdo do novo banner. As setinhas e bolinhas se ajustam
+              sozinhas para qualquer quantidade de slides.
+            -->
+          </div>
+          <button type="button" class="carousel-arrow prev" aria-label="Banner anterior">‹</button>
+          <button type="button" class="carousel-arrow next" aria-label="Próximo banner">›</button>
+        </div>
+        <div class="carousel-dots"></div>
+      </div>
+    </section>
+
+    <section id="tutorial">
+      <div class="section-head">
+        <p class="eyebrow">Tutorial rápido</p>
+        <h2>Como transformar um link em link de afiliado</h2>
+        <p>Direto no grupo, sem precisar instalar nada. Escolha a loja e veja o passo a passo:</p>
+      </div>
+
+      <div class="tab-switch">
+        <input type="radio" name="tabs" id="tab-ml" checked>
+        <input type="radio" name="tabs" id="tab-amazon">
+        <input type="radio" name="tabs" id="tab-shopee">
+        <input type="radio" name="tabs" id="tab-aliexpress">
+        <input type="radio" name="tabs" id="tab-instant">
+
+        <div class="tab-labels">
+          <label for="tab-ml"><span class="dot"></span>Mercado Livre</label>
+          <label for="tab-amazon"><span class="dot"></span>Amazon</label>
+          <label for="tab-shopee"><span class="dot"></span>Shopee</label>
+          <label for="tab-aliexpress"><span class="dot"></span>Aliexpress</label>
+          <label for="tab-instant"><span class="dot"></span>Instant Gaming</label>
+        </div>
+
+        <div class="tab-panels">
+          <div class="panel panel-ml">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag ml"><span class="dot"></span>Mercado Livre</span>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><div class="step-text"><strong>Copie o link do produto</strong><span>Abra o produto no app ou site do Mercado Livre e copie o link.</span></div></li>
+                  <li><span class="step-num">2</span><div class="step-text"><strong>Cole no bot do grupo</strong><span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span></div></li>
+                  <li><span class="step-num">3</span><div class="step-text"><strong>Receba o link de afiliado</strong><span>Em segundos, você recebe o link pronto para compartilhar.</span></div></li>
+                  <li><span class="step-num">4</span><div class="step-text"><strong>Compartilhe e acompanhe</strong><span>Use o link onde quiser — grupos, status, redes sociais.</span></div></li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-mercadolivre.gif</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-amazon">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag amazon"><span class="dot"></span>Amazon</span>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><div class="step-text"><strong>Copie o link do produto</strong><span>Abra o produto no app ou site da Amazon e copie o link.</span></div></li>
+                  <li><span class="step-num">2</span><div class="step-text"><strong>Cole no bot do grupo</strong><span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span></div></li>
+                  <li><span class="step-num">3</span><div class="step-text"><strong>Receba o link de afiliado</strong><span>Em segundos, você recebe o link pronto para compartilhar.</span></div></li>
+                  <li><span class="step-num">4</span><div class="step-text"><strong>Compartilhe e acompanhe</strong><span>Use o link onde quiser — grupos, status, redes sociais.</span></div></li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-amazon.gif</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-shopee">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag shopee"><span class="dot"></span>Shopee</span>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><div class="step-text"><strong>Copie o link do produto</strong><span>Abra o produto no app ou site da Shopee e copie o link.</span></div></li>
+                  <li><span class="step-num">2</span><div class="step-text"><strong>Cole no bot do grupo</strong><span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span></div></li>
+                  <li><span class="step-num">3</span><div class="step-text"><strong>Receba o link de afiliado</strong><span>Em segundos, você recebe o link pronto para compartilhar.</span></div></li>
+                  <li><span class="step-num">4</span><div class="step-text"><strong>Compartilhe e acompanhe</strong><span>Use o link onde quiser — grupos, status, redes sociais.</span></div></li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-shopee.gif</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-aliexpress">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag aliexpress"><span class="dot"></span>Aliexpress</span>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><div class="step-text"><strong>Copie o link do produto</strong><span>Abra o produto no app ou site do Aliexpress e copie o link.</span></div></li>
+                  <li><span class="step-num">2</span><div class="step-text"><strong>Cole no bot do grupo</strong><span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span></div></li>
+                  <li><span class="step-num">3</span><div class="step-text"><strong>Receba o link de afiliado</strong><span>Em segundos, você recebe o link pronto para compartilhar.</span></div></li>
+                  <li><span class="step-num">4</span><div class="step-text"><strong>Compartilhe e acompanhe</strong><span>Use o link onde quiser — grupos, status, redes sociais.</span></div></li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-aliexpress.gif</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-instant">
+            <div class="tutorial-grid">
+              <div>
+                <span class="platform-tag instant"><span class="dot"></span>Instant Gaming</span>
+                <ol class="steps">
+                  <li><span class="step-num">1</span><div class="step-text"><strong>Copie o link do produto</strong><span>Abra o jogo no site da Instant Gaming e copie o link.</span></div></li>
+                  <li><span class="step-num">2</span><div class="step-text"><strong>Cole no bot do grupo</strong><span>Envie o link para a ferramenta de conversão disponível no Universo Promos.</span></div></li>
+                  <li><span class="step-num">3</span><div class="step-text"><strong>Receba o link de afiliado</strong><span>Em segundos, você recebe o link pronto para compartilhar.</span></div></li>
+                  <li><span class="step-num">4</span><div class="step-text"><strong>Compartilhe e acompanhe</strong><span>Use o link onde quiser — grupos, status, redes sociais.</span></div></li>
+                </ol>
+              </div>
+              <div class="phone-stage">
+                <div class="phone">
+                  <div class="phone-screen">
+                    <div class="gif-placeholder"><strong>GIF do tutorial aqui</strong><span>Coloque assets/tutorial-instant-gaming.gif</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="blog-preview">
+      <div class="section-head">
+        <p class="eyebrow">Do nosso blog</p>
+        <h2>Guias de compra mais recentes</h2>
+        <p>Conteúdo próprio sobre como aproveitar melhor cada loja parceira.</p>
+      </div>
+      <div class="article-grid">
+        <a class="article-card" href="blog/como-funcionam-cupons-de-desconto.html">
+          <span class="platform-tag ml"><span class="dot"></span>Geral</span>
+          <h3>Como funcionam os cupons de desconto (e por que eles somem tão rápido)</h3>
+          <p>Entenda a lógica por trás dos cupons limitados e como não perder as melhores ofertas.</p>
+          <span class="read-more">Ler artigo →</span>
+        </a>
+        <a class="article-card" href="blog/guia-compras-aliexpress.html">
+          <span class="platform-tag aliexpress"><span class="dot"></span>Aliexpress</span>
+          <h3>Guia completo para comprar no Aliexpress sem dor de cabeça</h3>
+          <p>Prazos de entrega, rastreio, avaliação de vendedores e o que observar antes de comprar.</p>
+          <span class="read-more">Ler artigo →</span>
+        </a>
+        <a class="article-card" href="blog/guia-instant-gaming.html">
+          <span class="platform-tag instant"><span class="dot"></span>Instant Gaming</span>
+          <h3>Instant Gaming: como funciona a compra de jogos com chave (key)?</h3>
+          <p>O que é uma key &#x1F511;, como ativar e os cuidados na hora de comprar jogos mais baratos.</p>
+          <span class="read-more">Ler artigo →</span>
+        </a>
+      </div>
+      <div style="text-align:center; margin-top:36px;">
+        <a class="btn btn-ghost" href="blog/index.html">Ver todos os artigos</a>
+      </div>
+    </section>
+
+    <section id="qrcode">
+      <div class="section-head" style="margin-left:auto; margin-right:auto; text-align:center;">
+        <p class="eyebrow">Ou escaneie</p>
+        <h2>Aponte a câmera do celular e entre no grupo</h2>
+      </div>
+      <div class="qr-block">
+        <div class="qr-card">
+          <img src="assets/qrcode.png" alt="QR code para entrar no grupo Universo Promos">
+        </div>
+        <small>Abra a câmera do celular, aponte para o QR code e toque no link que aparecer.</small>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <h2>Pronto para economizar no próximo pedido?</h2>
+      <p>Entre no Universo Promos e receba as melhores ofertas assim que elas aparecem.</p>
+      <a class="btn btn-primary" href="https://t.me/+qzWgET30uS9kYmZh" target="_blank" rel="noopener">Entrar no grupo agora</a>
+    </section>
+
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="footer-brand"><img src="assets/logo.png" alt="Universo Promos"> Universo Promos</div>
+          <p>Cupons, ofertas e guias de compra de Mercado Livre, Amazon, Shopee, Aliexpress e Instant Gaming.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Início</a></li>
+            <li><a href="blog/index.html">Blog</a></li>
+            <li><a href="sobre.html">Sobre</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="afiliados.html">Divulgação de afiliados</a></li>
+            <li><a href="privacidade.html">Política de privacidade</a></li>
+            <li><a href="termos.html">Termos de uso</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>Universo Promos © 2026</span>
+        <span>Este site participa de programas de afiliados e não possui vínculo oficial com Mercado Livre, Amazon, Shopee, Aliexpress ou Instant Gaming.</span>
+      </div>
+    </footer>
+  </div>
+</main>
+
+<!-- Integração do Banner Instant Gaming -->
+<script src="assets/ig-config.js"></script>
+<script src="https://www.instant-gaming.com/api/banner/partner/loader.js" defer></script>
+
+<!-- Gerador de links de afiliado -->
+<script src="assets/main.js" defer></script>
+
+<!-- Carrossel de banners -->
+<script src="assets/carousel.js" defer></script>
+
+<!-- Efeitos de rolagem (cabeçalho, revelação de seções, parallax) -->
+<script src="assets/scroll-fx.js" defer></script>
+
+</body>
+</html>
