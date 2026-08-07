@@ -40,7 +40,8 @@
     's.shopee.com',
     'aliexpress.com',
     's.click.aliexpress.com',
-    'instant-gaming.com'
+    'instant-gaming.com',
+    'nuuvem.com'
   ];
 
   let lastSubmitAt = 0;
