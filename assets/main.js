@@ -109,7 +109,7 @@
     resultContainer.classList.add('hidden');
 
     if (!isAllowedUrl(originalLink)) {
-      showError('Cole um link válido do Mercado Livre, Amazon, Shopee, Aliexpress ou Instant Gaming.');
+      showError('Cole um link válido do Mercado Livre, Amazon, Shopee, Aliexpress, Nuuvem ou Instant Gaming.');
       return;
     }
 
