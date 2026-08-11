@@ -238,6 +238,20 @@ section{padding:70px 0;}
 .carousel-slide.is-active{opacity:1; visibility:visible; position:relative; z-index:2;}
 .carousel-img{max-width:100%; height:auto; border-radius:10px; display:block;}
 
+/* Força o banner dinâmico da Instant Gaming a ocupar 100% da largura */
+.ig-banner-destaque {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.ig-banner-destaque iframe,
+.ig-banner-destaque div {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto;
+}
+
 .carousel-arrow{
   position:absolute; top:50%; transform:translateY(-50%);
   width:36px; height:36px; border-radius:50%;
